@@ -1,0 +1,33 @@
+{
+  "name": "inotebook",
+  "version": "1.0.0",
+  "description": "iNotebook - Your notes on the cloud",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Mangukiya",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/node": "^7.17.10",
+    "@babel/plugin-proposal-decorators": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.1",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
