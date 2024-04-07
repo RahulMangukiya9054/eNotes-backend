@@ -22,7 +22,7 @@ export const addUser = async (req, res) => {
             let result = await userModel.create(data)
             if (result) {
                 let mailInfo = {
-                    mailId: email, // This should be dynamically set to the user's email address
+                    mailId: data.email, // This should be dynamically set to the user's email address
                     sub: "Welcome to iNotebook – Your New Digital Notebook!",
                     txt: "Welcome to iNotebook! We're thrilled to have you on board. Start creating, editing, and managing your notes easily with our app. Need help? Reach out to our support team anytime. Thank you for choosing iNotebook!",
                     html: `
