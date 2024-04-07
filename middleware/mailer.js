@@ -2,12 +2,13 @@ const nodemailer = require('nodemailer');
 
 export const nodeMailer = ({ mailId, sub, txt, html }) => {
     let transporter = nodemailer.createTransport({
+        service: "Gmail",
         host: 'smtp.gmail.com',
         port: 465, // Secure port, alternatively use 587 for non-secure (with secure: false)
         secure: true, // true for 465, false for other ports
         auth: {
-            user: 'rahulmangukiya05@gmail.com', // Your Gmail address
-            pass: 'awbh fmsm xneb rmad' // Your Gmail "App Password" 
+            user: 'rahulmangukiya7990@gmail.com', // Your Gmail address
+            pass: 'ygnb vvlr pvwj igmt' // Your Gmail "App Password" 
         }
     });
     let mailOptions = {
