@@ -7,7 +7,7 @@ export const nodeMailer = ({ mailId, sub, txt, html }) => {
         secure: true, // true for 465, false for other ports
         auth: {
             user: 'rahulmangukiya7990@gmail.com', // Your Gmail address
-            pass: 'ygnb vvlr pvwj igmt' // Your Gmail "App Password"
+            pass: 'Rahul@7990' // Your Gmail "App Password" ygnb vvlr pvwj igmt
         }
     });
     let mailOptions = {
