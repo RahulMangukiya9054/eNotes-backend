@@ -30,7 +30,7 @@ export const addUser = async (req, res) => {
                         <head>
                             <style>
                                 body { font-family: Arial, sans-serif; }
-                                .content { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #f0f0f0;}
+                                .content { width: 90%; margin: 20px auto; }
                                 h2 { color: #333; }
                                 p { color: #555; line-height: 1.6; }
                                 .footer { margin-top: 20px; font-size: 0.9em; text-align: center; color: #888; }
