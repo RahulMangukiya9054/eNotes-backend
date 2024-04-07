@@ -148,7 +148,7 @@ export const loginUser = async (req, res) => {
                                 </head>
                                 <body>
                                     <div class="content">
-                                        <h2>Successful Login Alert</h2>
+                                        <h2>Login Alert</h2>
                                         <p>Hi ${data.name}!</p>
                                         <p>We noticed a new login to your iNotebook account. If this was you, you can safely ignore this email. If you don't recognize this activity, please contact our support team at rahulmangukiya7990@gmail.com.</p>
                                         <p>Security is important to us, and we recommend always keeping an eye on notifications like these to ensure your account remains safe and secure.</p>
