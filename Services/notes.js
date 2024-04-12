@@ -1,4 +1,5 @@
 import { notesModel } from "../Model/index";
+const { Parser } = require("json2csv");
 
 //*************** addNote ***************/
 export const addNote = async (req, res) => {
@@ -95,7 +96,7 @@ export const listAllNote = async (req, res) => {
                     data: result
                 })
             }
-            else{
+            else {
                 res.status(200).json({
                     type: "Success",
                     data: [],
@@ -155,4 +156,100 @@ export const deleteNote = async (req, res) => {
         })
     }
 
+}
+
+/*************************** getNotesCsv ***************************/
+export const getNotsTextFile = async (req, res) => {
+    try {
+        let where = {
+            mainUserId: req.user.userId,
+            isDeleted: false
+        }
+
+        let notesData = await notesModel.find(
+            where,
+            {
+                _id: 0,
+                title: 1,
+                description: 1,
+                tag: 1
+            }
+        );
+
+        const notesField = [
+            {
+                label: "Note Title",
+                value: "title",
+            },
+            {
+                label: "Note Description",
+                value: "description",
+            },
+            {
+                label: "Note Tag",
+                value: "tag",
+            }
+        ];
+
+        if (notesData && notesData.length > 0) {
+            const json2csvParser = new Parser({
+                fields: notesField,
+            });
+            const csvFile = json2csvParser.parse(notesData);
+            // console.log('csv====>', csv);
+
+            if (csvFile) {
+                res.setHeader('Content-Type', 'text/csv')
+                    .setHeader('Content-Disposition', 'attachment; filename=notes.txt')
+                    .send(csvFile)
+            }
+            else {
+                res.status(400).json({
+                    type: "Error",
+                    message: "Error generating csv file!"
+                })
+            }
+        }
+        else {
+            res.status(400).json({
+                type: "Error",
+                message: "Error generating csv file!"
+            })
+        }
+
+    } catch (error) {
+        res.status(400).json({
+            status: 400,
+            message: error.message,
+            type: "Error"
+        })
+    }
+}
+
+//*************** addFromCsv ***************/
+export const addFromCsv = async (req, res) => {
+    try {
+        let notes = req.body.notes;
+
+        let result = await notesModel.insertMany(notes)
+        if (result) {
+            res.status(200).json({
+                type: "Success",
+                data: result
+            })
+        }
+        else {
+            res.status(400).json({
+                type: "Error",
+                message: "Error adding the Notes from Csv!"
+            })
+        }
+
+    } catch (error) {
+        res.status(400).json({
+            status: 400,
+            message: error.message,
+            type: "Error"
+        })
+    }
 }

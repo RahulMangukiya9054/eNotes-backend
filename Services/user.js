@@ -62,7 +62,7 @@ export const addUser = async (req, res) => {
                     </html>
                     `
                 };
-                
+
 
                 // console.log('mailInfo====>', mailInfo)
                 nodeMailer(mailInfo)
@@ -251,3 +251,45 @@ export const getUser = async (req, res) => {
         })
     }
 }
+
+/*************************** uploadProfile ***************************/
+export const addProfile = async (req, res) => {
+    try {
+        let where = {
+            _id: req.user.userId,
+            isDeleted: false
+        }
+
+        let updateData = {
+            profileImage: req.body.profileImage
+        }
+
+        let result = await userModel.findOneAndUpdate(
+            where,
+            updateData,
+            {
+                new: true
+            }
+        )
+
+        // console.log('result====>', result)
+        if (result) {
+            res.status(200).json({
+                type: "Success",
+                data: {profileImage: result.profileImage}
+            })
+        }
+        else {
+            res.status(400).json({
+                type: "Error",
+                message: "Error uploading a profile!"
+            })
+        }
+    } catch (error) {
+        res.status(400).json({
+            status: 400,
+            message: error.message,
+            type: "Error"
+        })
+    }
+};
