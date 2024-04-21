@@ -18,7 +18,6 @@ export const nodeMailer = ({ mailId, sub, txt, html }) => {
         text: txt,
         html: html
     };
-    // console.log('mailOptions====>', mailOptions)
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);

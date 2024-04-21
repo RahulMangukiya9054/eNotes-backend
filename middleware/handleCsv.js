@@ -14,8 +14,6 @@ export const handleCsv = async (req, res, next) => {
                 res.status(400).json({ error: 'No file uploaded' });
             }
 
-            // console.log('fileBuffer.toString()====>', fileBuffer.toString())
-
             // Convert CSV buffer to JSON
             csvtojson().fromString(fileBuffer.toString())
                 .then(async (jsonArray) => {
@@ -39,8 +37,6 @@ export const handleCsv = async (req, res, next) => {
                     })
 
                     req.body.notes = notesToAdd;
-                    // res.json(req.body);
-                    // console.log('req.body====>', req.body);
                     next()
                 })
                 .catch((error) => {
