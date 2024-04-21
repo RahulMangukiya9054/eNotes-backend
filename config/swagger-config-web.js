@@ -3,7 +3,7 @@ import swaggerJSDoc from "swagger-jsdoc";
 const swaggerOptions = {
     swaggerDefinition: {
         info: {
-            title: "iNotebook Api's Documentation",
+            title: "eNotes Api's Documentation",
             version: "1.0",
             description: "All api end points",
             servers: ["http://localhost:8000"]

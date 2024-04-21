@@ -36,7 +36,7 @@ app.use(
 app.use("/api", routes);
 
 //=========== Test Route ===========
-app.get('/', (req, res) => res.send(`<h1>iNotebook is working!</h1>`))
+app.get('/', (req, res) => res.send(`<h1>eNotes is working!</h1>`))
 
 //========== App Listener =========
-app.listen(port, () => console.log(`iNotebook app listening on port ${port}!`))
+app.listen(port, () => console.log(`eNotes app listening on port ${port}!`))
