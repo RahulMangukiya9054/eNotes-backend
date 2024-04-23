@@ -23,8 +23,8 @@ export const addUser = async (req, res) => {
             if (result) {
                 let mailInfo = {
                     mailId: data.email, // This should be dynamically set to the user's email address
-                    sub: "Welcome to iNotebook – Your New Digital Notebook!",
-                    txt: "Welcome to iNotebook! We're thrilled to have you on board. Start creating, editing, and managing your notes easily with our app. Need help? Reach out to our support team anytime. Thank you for choosing iNotebook!",
+                    sub: "Welcome to eNotes – Your New Digital Notebook!",
+                    txt: "Welcome to eNotes! We're thrilled to have you on board. Start creating, editing, and managing your notes easily with our app. Need help? Reach out to our support team anytime. Thank you for choosing eNotes!",
                     html: `
                     <html>
                         <head>
@@ -38,9 +38,9 @@ export const addUser = async (req, res) => {
                         </head>
                         <body>
                             <div class="content">
-                                <h2>Welcome to iNotebook, ${data.name}!</h2>
+                                <h2>Welcome to eNotes, ${data.name}!</h2>
                                 <p>
-                                    You've just unlocked a new realm of productivity and note management with iNotebook. 
+                                    You've just unlocked a new realm of productivity and note management with eNotes. 
                                     Here, your ideas can flow, and your tasks stay organized effortlessly. 
                                 </p>
                                 <p>Here are a few things you can do to get started:</p>
@@ -51,10 +51,10 @@ export const addUser = async (req, res) => {
                                     <li>Access your notes from anywhere, on any device.</li>
                                 </ul>
                                 <p>Need help or have questions? Reach out to our support team at rahulmangukiya7990@gmail.com.</p>
-                                <p>We're excited to see how iNotebook helps you capture and organize your thoughts!</p>
+                                <p>We're excited to see how eNotes helps you capture and organize your thoughts!</p>
                                 <div class="footer">
                                     Happy Notetaking, <br>
-                                    The iNotebook Team <br>
+                                    The eNotes Team <br>
                                     <a href="mailto:rahulmangukiya7990@gmail.com">Contact Support</a>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ export const loginUser = async (req, res) => {
                         let mailInfo = {
                             mailId: data.email, // dynamically set to the user's email address
                             sub: "Successful Login Notification",
-                            txt: "Hi there! We noticed a new login to your iNotebook account. If this was you, you can safely ignore this email. If you don't recognize this activity, please contact our support team.",
+                            txt: "Hi there! We noticed a new login to your eNotes account. If this was you, you can safely ignore this email. If you don't recognize this activity, please contact our support team.",
                             html: `
                             <html>
                                 <head>
@@ -150,12 +150,12 @@ export const loginUser = async (req, res) => {
                                     <div class="content">
                                         <h2>Login Alert</h2>
                                         <p>Hi ${data.name}!</p>
-                                        <p>We noticed a new login to your iNotebook account. If this was you, you can safely ignore this email. If you don't recognize this activity, please contact our support team at rahulmangukiya7990@gmail.com.</p>
+                                        <p>We noticed a new login to your eNotes account. If this was you, you can safely ignore this email. If you don't recognize this activity, please contact our support team at rahulmangukiya7990@gmail.com.</p>
                                         <p>Security is important to us, and we recommend always keeping an eye on notifications like these to ensure your account remains safe and secure.</p>
                                         <p>If you have any concerns or need assistance, don't hesitate to reach out to us.</p>
                                         <div class="footer">
                                             Stay Safe, <br>
-                                            The iNotebook Team <br>
+                                            The eNotes Team <br>
                                             <a href="mailto:rahulmangukiya7990@gmail.com">Contact Support</a>
                                         </div>
                                     </div>

@@ -1,7 +1,7 @@
 {
-  "name": "inotebook",
+  "name": "enotes",
   "version": "1.0.0",
-  "description": "iNotebook - Your notes on the cloud",
+  "description": "eNotes - Your notes on the cloud",
   "main": "app.js",
   "scripts": {
     "start": "nodemon --exec babel-node -- app.js",
