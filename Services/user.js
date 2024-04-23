@@ -102,7 +102,7 @@ export const loginUser = async (req, res) => {
             if (matchPassword) {
 
                 if (userData?.loginToken) {
-                    if (userData?.loginToken?.length >= 3) {
+                    if (userData?.loginToken?.length >= 1) {
                         let rmToken = await userModel.findOneAndUpdate(
                             { _id: userData._id },
                             {
